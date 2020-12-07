@@ -19,11 +19,14 @@ app.use(routes);
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/GBooks";
 
-mongoose.connect(MONGODB_URI, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-});
-
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/GBooks', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
+);
 app.listen(PORT, () => {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
