@@ -64,7 +64,7 @@ class Home extends Component {
                 <Container fluid>
                 <HeroHeader />
                 <form>
-                    <h5>Search for books</h5><h63> - powered by Google Books</h63>
+                    <h5>Search for books</h5><h3> - powered by Google Books</h3>
                     <Input
                         value={this.state.search}
                         onChange={this.handleInputChange}

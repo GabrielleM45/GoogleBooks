@@ -9,7 +9,7 @@ class ResultListItem extends Component {
         color: "",
         text: "Save"
     }
-    
+
     componentDidMount = () => {
         this.setState({
             mounted: true
@@ -31,41 +31,19 @@ class ResultListItem extends Component {
                 color: "",
                 text: "Save"
             })
-        }   
+        }
     }
 
 
 
-    onClickFunc = () => {
+    onClickFunction = () => {
         this.props.saveGoogleBook(this.props)//.bind(this, this.props);
         this.getStyle();
     }
 
-    // getStyle = (id) => {
-    //     let style = {
-    //         backgroundColor: "#00E000",
-    //         color: "white"   
-    //     }
-    //     if (this.state.mounted) {
-    //         console.log("Here's the id", id)
-    //         API.getBook(id)
-    //         .then(res => {
-    //             console.log("Here's the res", res);
-    //             if (res.data.id == id) {
-    //                 console.log("There's a match!");
-    //                 console.log(style);
-    //                 return style
-    //             }
-    //         })
-    //         .catch(err => {
-    //             console.log(err)
-    //         })
-    //     }
-    // }
-    
-    
+
     render () {
-        
+
         const {book} = this.props
 
         return (
@@ -79,13 +57,13 @@ class ResultListItem extends Component {
                         <p className="card-text" >{this.props.description}</p>
                         <p style={{fontStyle: "italic"}}>Author(s): {this.props.authors}</p>
                         <a href={this.props.link} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{marginRight: "6px"}}>View Book</a>
-                        <button onClick={this.onClickFunc} style={{ backgroundColor: this.state.bgColor, color: this.state.color }} className="btn">{this.state.text}</button>
+                        <button onClick={this.onClickFunction} style={{ backgroundColor: this.state.bgColor, color: this.state.color }} className="btn">{this.state.text}</button>
                     </div>
                 </div>
             </div>
         )
     }
-    
+
 }
 
 export default ResultListItem;
